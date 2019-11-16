@@ -1,12 +1,13 @@
 {
-  "name": "widoz/hooks",
+  "name": "widoz/hooks-collection",
   "type": "library",
-  "description": "Hooks is an implementation which define different types of hooks framework indipendent",
+  "description": "A collection of hooks which define different types framework independent",
   "keywords": [
-    "wordpress",
+    "hooks",
+    "hook",
     "psr"
   ],
-  "homepage": "https://github.com/widoz/hooks",
+  "homepage": "https://github.com/widoz/hooks-collection",
   "license": "MIT",
   "authors": [
     {
@@ -19,21 +20,21 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "support": {
-    "issues": "https://github.com/widoz/hooks/issues"
+    "issues": "https://github.com/widoz/hooks-collection/issues"
   },
   "autoload": {
     "classmap": [
       "src/"
     ],
     "psr-4": {
-      "Widoz\\Hooks\\": "src"
+      "Widoz\\HooksCollection\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Widoz\\HooksTests\\": "tests/php",
-      "Widoz\\HooksTests\\Integration\\": "tests/php/Integration",
-      "Widoz\\HooksTests\\Unit\\": "tests/php/Unit"
+      "Widoz\\HooksCollectionTests\\": "tests/php",
+      "Widoz\\HooksCollectionTests\\Integration\\": "tests/php/Integration",
+      "Widoz\\HooksCollectionTests\\Unit\\": "tests/php/Unit"
     }
   },
   "require": {
@@ -45,7 +46,7 @@
     "brain/monkey": "^2.3",
     "phpunit/phpunit": "^7",
     "inpsyde/php-coding-standards": "^0.13.3",
-    "vimeo/psalm": "^3.0@dev",
+    "vimeo/psalm": "^3.0@dev"
   },
   "config": {
     "platform": {
