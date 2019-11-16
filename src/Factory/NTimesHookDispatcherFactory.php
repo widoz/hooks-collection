@@ -38,7 +38,7 @@ class NTimesHookDispatcherFactory implements HookDispatcherFactory
     private $hookRemover;
 
     /**
-     * NTimesHookTypeAwareFactory constructor
+     * NTimesHookDispatcherFactory constructor
      * @param HookInjector $hookInjector
      * @param HookRemover $hookRemover
      */

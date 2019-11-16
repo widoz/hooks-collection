@@ -20,11 +20,11 @@ use Widoz\Hooks\Remover\HookRemover;
 use Widoz\HooksCollection\Dispatch\RemovableHookDispatcher;
 
 /**
- * Class WpRemovableHookTypeAwareFactory
+ * Class RemovableDispatcherFactory
  *
  * @author Guido Scialfa <dev@guidoscialfa.com>
  */
-class RemovableHookTypeAwareDispatcherFactory implements HookDispatcherFactory
+class RemovableDispatcherFactory implements HookDispatcherFactory
 {
     /**
      * @var HookInjector
@@ -37,7 +37,7 @@ class RemovableHookTypeAwareDispatcherFactory implements HookDispatcherFactory
     private $hookRemover;
 
     /**
-     * RemovableHookTypeAwareFactory constructor
+     * RemovableDispatcherFactory constructor
      * @param HookInjector $hookInjector
      * @param HookRemover $hookRemover
      */
