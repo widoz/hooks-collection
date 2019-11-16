@@ -1,0 +1,55 @@
+{
+  "name": "widoz/hooks",
+  "type": "library",
+  "description": "Hooks is an implementation which define different types of hooks framework indipendent",
+  "keywords": [
+    "wordpress",
+    "psr"
+  ],
+  "homepage": "https://github.com/widoz/hooks",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Guido Scialfa",
+      "email": "dev@guidoscialfa.com",
+      "homepage": "http://www.guidoscialfa.com",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "support": {
+    "issues": "https://github.com/widoz/hooks/issues"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {
+      "Widoz\\Hooks\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Widoz\\HooksTests\\": "tests/php",
+      "Widoz\\HooksTests\\Integration\\": "tests/php/Integration",
+      "Widoz\\HooksTests\\Unit\\": "tests/php/Unit"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "widoz/hooks-interfaces": "^0.1.0"
+  },
+  "require-dev": {
+    "widoz/project-tests-helper": "dev-phpunit-7",
+    "brain/monkey": "^2.3",
+    "phpunit/phpunit": "^7",
+    "inpsyde/php-coding-standards": "^0.13.3",
+    "vimeo/psalm": "^3.0@dev",
+  },
+  "config": {
+    "platform": {
+      "php": "7.1"
+    }
+  }
+}
