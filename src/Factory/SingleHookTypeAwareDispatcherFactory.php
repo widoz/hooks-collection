@@ -39,10 +39,12 @@ class SingleHookTypeAwareDispatcherFactory implements HookDispatcherFactory
     /**
      * SingleHookTypeAwareFactory constructor
      * @param HookInjector $hookInjector
+     * @param HookRemover $hookRemover
      */
-    public function __construct(HookInjector $hookInjector)
+    public function __construct(HookInjector $hookInjector, HookRemover $hookRemover)
     {
         $this->hookInjector = $hookInjector;
+        $this->hookRemover = $hookRemover;
     }
 
     /**
