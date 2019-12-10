@@ -32,9 +32,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Widoz\\HooksCollectionTests\\": "tests/php",
-      "Widoz\\HooksCollectionTests\\Integration\\": "tests/php/Integration",
-      "Widoz\\HooksCollectionTests\\Unit\\": "tests/php/Unit"
+      "Widoz\\HooksCollectionTests\\": "tests/php"
     }
   },
   "require": {
