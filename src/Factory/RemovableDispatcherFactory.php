@@ -15,7 +15,6 @@ namespace Widoz\HooksCollection\Factory;
 use Widoz\Hooks\Dispatch\HookDispatcher;
 use Widoz\Hooks\Factory\HookDispatcherFactory;
 use Widoz\Hooks\Hook\Hook;
-use Widoz\Hooks\Hook\HookInjector;
 use Widoz\Hooks\Remover\HookRemover;
 use Widoz\HooksCollection\Dispatch\RemovableHookDispatcher;
 
@@ -27,23 +26,16 @@ use Widoz\HooksCollection\Dispatch\RemovableHookDispatcher;
 class RemovableDispatcherFactory implements HookDispatcherFactory
 {
     /**
-     * @var HookInjector
-     */
-    private $hookInjector;
-
-    /**
      * @var HookRemover
      */
     private $hookRemover;
 
     /**
      * RemovableDispatcherFactory constructor
-     * @param HookInjector $hookInjector
      * @param HookRemover $hookRemover
      */
-    public function __construct(HookInjector $hookInjector, HookRemover $hookRemover)
+    public function __construct(HookRemover $hookRemover)
     {
-        $this->hookInjector = $hookInjector;
         $this->hookRemover = $hookRemover;
     }
 
@@ -52,10 +44,6 @@ class RemovableDispatcherFactory implements HookDispatcherFactory
      */
     public function create(Hook $hook, array $extraArguments): HookDispatcher
     {
-        $removableHookDispatcher = new RemovableHookDispatcher($hook, $this->hookRemover);
-
-        $this->hookInjector->addHook($hook, $removableHookDispatcher);
-
-        return $removableHookDispatcher;
+        return new RemovableHookDispatcher($hook, $this->hookRemover);
     }
 }
