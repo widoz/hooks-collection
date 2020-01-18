@@ -1,21 +1,22 @@
-<?php # -*- coding: utf-8 -*-
+<?php
 
 /*
- * This file is part of the Hooks package.
+ * This file is part of the Event Listeners Collection package.
  *
  * (c) Guido Scialfa <dev@guidoscialfa.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 declare(strict_types=1);
 
-namespace Widoz\HooksCollection;
+namespace Widoz\HooksCollection\Exception;
 
 use UnexpectedValueException;
 
 /**
- * Class IntegerException
+ * Class NumberException
  *
  * @author Guido Scialfa <dev@guidoscialfa.com>
  */
