@@ -1,7 +1,7 @@
 <?php # -*- coding: utf-8 -*-
 
 /*
- * This file is part of the Hooks package.
+ * This file is part of the Hooks Collection package.
  *
  * (c) Guido Scialfa <dev@guidoscialfa.com>
  *

@@ -36,8 +36,7 @@
     }
   },
   "require": {
-    "php": ">=7.1",
-    "widoz/hooks-interfaces": "^0.3.0"
+    "php": ">=7.1"
   },
   "require-dev": {
     "widoz/project-tests-helper": "dev-phpunit-7",
