@@ -1,13 +1,14 @@
 {
-  "name": "widoz/hooks-collection",
+  "name": "widoz/event-listeners-collection",
   "type": "library",
-  "description": "A collection of hooks which define different types framework independent",
+  "description": "A collection of event listeners wrapper, allowing to decouple constraints and preconditions from the listener logic.",
   "keywords": [
-    "hooks",
-    "hook",
+    "event-listener",
+    "event-dispatcher",
+    "events",
     "psr"
   ],
-  "homepage": "https://github.com/widoz/hooks-collection",
+  "homepage": "https://github.com/widoz/event-listeners-collection",
   "license": "MIT",
   "authors": [
     {
@@ -20,19 +21,19 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "support": {
-    "issues": "https://github.com/widoz/hooks-collection/issues"
+    "issues": "https://github.com/widoz/event-listeners-collection/issues"
   },
   "autoload": {
     "classmap": [
       "src/"
     ],
     "psr-4": {
-      "Widoz\\HooksCollection\\": "src"
+      "Widoz\\EventListenersCollection\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Widoz\\HooksCollectionTests\\": "tests/php"
+      "Widoz\\EventListenersCollection\\": "tests/php"
     }
   },
   "require": {

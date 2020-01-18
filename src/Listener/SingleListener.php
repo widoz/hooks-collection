@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Hooks Collection package.
+ * This file is part of the Event Listeners Collection package.
  *
  * (c) Guido Scialfa <dev@guidoscialfa.com>
  *
@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Widoz\HooksCollection\Listener;
+namespace Widoz\EventListenersCollection\Listener;
 
 /**
  * Class SingleListener
