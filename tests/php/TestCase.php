@@ -11,8 +11,11 @@
 
 declare(strict_types=1);
 
-namespace Widoz\EventListenersCollection;
+namespace Widoz\EventListenersCollectionTests;
 
+use Faker\Factory;
+use Faker\Generator;
+use InvalidArgumentException;
 use ProjectTestsHelper\Phpunit\TestCase as PhpunitTestCase;
 
 /**
@@ -22,4 +25,20 @@ use ProjectTestsHelper\Phpunit\TestCase as PhpunitTestCase;
  */
 class TestCase extends PhpunitTestCase
 {
+    /**
+     * @var Generator
+     */
+    protected $faker;
+
+    /**
+     * @inheritDoc
+     * @throws InvalidArgumentException
+     */
+    protected function setUp()
+    {
+        $factory = new Factory();
+        $this->faker = $factory->create();
+
+        parent::setUp();
+    }
 }

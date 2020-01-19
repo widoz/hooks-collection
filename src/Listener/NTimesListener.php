@@ -13,11 +13,13 @@ declare(strict_types=1);
 
 namespace Widoz\EventListenersCollection\Listener;
 
-use Widoz\HooksCollection\Exception\NumberException;
+use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 /**
  * Class NTimesListener
  *
+ * @package Widoz\EventListenersCollection\Listener
  * @author Guido Scialfa <dev@guidoscialfa.com>
  */
 class NTimesListener
@@ -25,34 +27,35 @@ class NTimesListener
     /**
      * @var int
      */
-    private $times;
+    protected $times;
 
     /**
      * @var callable
      */
-    private $removeListener;
+    protected $removeListener;
 
     /**
      * @var callable
      */
-    private $callback;
+    protected $callback;
 
     /**
      * NTimesHookDispatcher constructor
+     *
      * @param callable $callback
      * @param callable $removeListener
      * @param int $times
-     * @throws NumberException
+     * @throws InvalidArgumentException
      */
     public function __construct(callable $callback, callable $removeListener, int $times)
     {
-        if ($times <= 0) {
-            throw NumberException::becauseValueIsLessThanOne($times);
+        if ($times < 1) {
+            Assert::greaterThanEq($times, 1, "{$times} must be equal or greater than one.");
         }
 
-        $this->times = $times;
-        $this->removeListener = $removeListener;
         $this->callback = $callback;
+        $this->removeListener = $removeListener;
+        $this->times = $times;
     }
 
     /**
@@ -65,21 +68,20 @@ class NTimesListener
     {
         // phpcs:enable
 
-        static $counter = 0;
+        static $counter = 1;
 
-        if ($counter >= $this->times - 1) {
+        if ($counter === $this->times) {
             $this->remove();
-            return $this->call(...$parameters);
         }
 
-        $counter++;
+        ++$counter;
         return $this->call(...$parameters);
     }
 
     /**
      * Remove Listener
      */
-    private function remove()
+    protected function remove()
     {
         ($this->removeListener)($this);
     }
@@ -93,7 +95,7 @@ class NTimesListener
      * phpcs:disable Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
      * phpcs:disable Inpsyde.CodeQuality.ReturnTypeDeclaration.NoReturnType
      */
-    private function call(...$parameters)
+    protected function call(...$parameters)
     {
         return ($this->callback)(...$parameters);
     }
