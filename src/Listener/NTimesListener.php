@@ -78,8 +78,10 @@ class NTimesListener
 
     /**
      * Remove Listener
+     *
+     * @return void
      */
-    private function remove()
+    private function remove(): void
     {
         ($this->removeListener)($this);
     }

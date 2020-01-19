@@ -33,7 +33,7 @@ class SingleListener
     /**
      * @var bool
      */
-    private $removed;
+    private $removed = false;
 
     /**
      * SingleFilter constructor
