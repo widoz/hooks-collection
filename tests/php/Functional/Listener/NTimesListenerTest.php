@@ -94,7 +94,7 @@ class NTimesListenerTest extends TestCase
             $nTimesListener(...$expectedParameters);
         }
 
-        self::assertEquals($times, $numberOfTimeCallbackGetExecuted);
+        self::assertEquals($times, $numberOfTimesCallbackGetExecuted);
     }
 
     public function timesDataProvider(): array
