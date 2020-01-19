@@ -1,12 +1,14 @@
 {
-  "name": "widoz/hooks",
+  "name": "widoz/event-listeners-collection",
   "type": "library",
-  "description": "Hooks is an implementation which define different types of hooks framework indipendent",
+  "description": "A collection of event listeners wrapper, allowing to decouple constraints and preconditions from the listener logic.",
   "keywords": [
-    "wordpress",
+    "event-listener",
+    "event-dispatcher",
+    "events",
     "psr"
   ],
-  "homepage": "https://github.com/widoz/hooks",
+  "homepage": "https://github.com/widoz/event-listeners-collection",
   "license": "MIT",
   "authors": [
     {
@@ -19,37 +21,37 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "support": {
-    "issues": "https://github.com/widoz/hooks/issues"
+    "issues": "https://github.com/widoz/event-listeners-collection/issues"
   },
   "autoload": {
     "classmap": [
       "src/"
     ],
     "psr-4": {
-      "Widoz\\Hooks\\": "src"
+      "Widoz\\EventListenersCollection\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Widoz\\HooksTests\\": "tests/php",
-      "Widoz\\HooksTests\\Integration\\": "tests/php/Integration",
-      "Widoz\\HooksTests\\Unit\\": "tests/php/Unit"
+      "Widoz\\EventListenersCollectionTests\\": "tests/php",
+      "Widoz\\EventListenersCollectionTests\\Functional\\": "tests/php/Functional"
     }
   },
   "require": {
-    "php": ">=7.1",
-    "widoz/hooks-interfaces": "^0.1.0"
+    "php": ">=7.1.33",
+    "webmozart/assert": "^1.6"
   },
   "require-dev": {
     "widoz/project-tests-helper": "dev-phpunit-7",
     "brain/monkey": "^2.3",
     "phpunit/phpunit": "^7",
     "inpsyde/php-coding-standards": "^0.13.3",
-    "vimeo/psalm": "^3.0@dev"
+    "vimeo/psalm": "^3.8",
+    "fzaninotto/faker": "^1.9"
   },
   "config": {
     "platform": {
-      "php": "7.1"
+      "php": "7.1.33"
     }
   }
 }
