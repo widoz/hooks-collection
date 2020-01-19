@@ -31,14 +31,20 @@ class SingleListener
     private $callback;
 
     /**
+     * @var bool
+     */
+    private $removed;
+
+    /**
      * SingleFilter constructor
+     *
      * @param callable $callback
      * @param callable $removeListener
      */
     public function __construct(callable $callback, callable $removeListener)
     {
-        $this->removeListener = $removeListener;
         $this->callback = $callback;
+        $this->removeListener = $removeListener;
     }
 
     /**
@@ -51,7 +57,12 @@ class SingleListener
     {
         // phpcs:enable
 
+        if ($this->removed) {
+            return null;
+        }
+
         ($this->removeListener)($this);
+        $this->removed = true;
 
         return ($this->callback)(...$parameters);
     }

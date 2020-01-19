@@ -27,17 +27,17 @@ class NTimesListener
     /**
      * @var int
      */
-    protected $times;
+    private $times;
 
     /**
      * @var callable
      */
-    protected $removeListener;
+    private $removeListener;
 
     /**
      * @var callable
      */
-    protected $callback;
+    private $callback;
 
     /**
      * NTimesHookDispatcher constructor
@@ -49,9 +49,7 @@ class NTimesListener
      */
     public function __construct(callable $callback, callable $removeListener, int $times)
     {
-        if ($times < 1) {
-            Assert::greaterThanEq($times, 1, "{$times} must be equal or greater than one.");
-        }
+        Assert::greaterThanEq($times, 1, "{$times} must be equal or greater than one.");
 
         $this->callback = $callback;
         $this->removeListener = $removeListener;
@@ -81,7 +79,7 @@ class NTimesListener
     /**
      * Remove Listener
      */
-    protected function remove()
+    private function remove()
     {
         ($this->removeListener)($this);
     }
@@ -95,7 +93,7 @@ class NTimesListener
      * phpcs:disable Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
      * phpcs:disable Inpsyde.CodeQuality.ReturnTypeDeclaration.NoReturnType
      */
-    protected function call(...$parameters)
+    private function call(...$parameters)
     {
         return ($this->callback)(...$parameters);
     }

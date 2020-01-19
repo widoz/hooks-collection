@@ -15,7 +15,6 @@ namespace Widoz\EventListenersCollectionTests\Functional\Listener;
 use InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use ReflectionException;
-use ReflectionProperty;
 use Widoz\EventListenersCollection\Listener\NTimesListener;
 use Widoz\EventListenersCollectionTests\TestCase;
 
@@ -76,14 +75,11 @@ class NTimesListenerTest extends TestCase
     {
         $nTimesListener = null;
         $expectedParameters = [$this->faker->uuid];
-        $numberOfTimeCallbackGetExecuted = 0;
-        $callback = function (...$parameters) use (
+        $numberOfTimesCallbackGetExecuted = 0;
+        $callback = $this->initializeCallback(
             $expectedParameters,
-            &$numberOfTimeCallbackGetExecuted
-        ) {
-            self::assertEquals($parameters, $expectedParameters);
-            ++$numberOfTimeCallbackGetExecuted;
-        };
+            $numberOfTimesCallbackGetExecuted
+        );
 
         $nTimesListener = new NTimesListener(
             $callback,
@@ -92,18 +88,7 @@ class NTimesListenerTest extends TestCase
             $times
         );
 
-        // Necessary step in order to pass the SUT to the removeListener callback
-        // We want to ensure the remove listener callback will get passed the instance
-        // of the SUT because it's that invokable we want to remove from the Dispatcher.
-        $propertyReflection = new ReflectionProperty($nTimesListener, 'removeListener');
-        $propertyReflection->setAccessible(true);
-        $propertyReflection->setValue(
-            $nTimesListener,
-            function (callable $listener) use ($nTimesListener) {
-                self::assertInstanceOf(NTimesListener::class, $listener);
-                self::assertEquals($nTimesListener, $listener);
-            }
-        );
+        $this->initializeRemoveListener($nTimesListener);
 
         for ($count = 1; $count <= $times; ++$count) {
             $nTimesListener(...$expectedParameters);
