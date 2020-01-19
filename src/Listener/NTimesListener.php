@@ -47,7 +47,7 @@ class NTimesListener
     public function __construct(callable $callback, callable $removeListener, int $times)
     {
         if ($times <= 0) {
-            throw NumberException::becauseValueIsLessThanZero($times);
+            throw NumberException::becauseValueIsLessThanOne($times);
         }
 
         $this->times = $times;

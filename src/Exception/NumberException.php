@@ -26,7 +26,7 @@ class NumberException extends UnexpectedValueException
      * @param int $value
      * @return NumberException
      */
-    public static function becauseValueIsLessThanZero(int $value): NumberException
+    public static function becauseValueIsLessThanOne(int $value): NumberException
     {
         return new self("{$value} must be greater than zero");
     }
