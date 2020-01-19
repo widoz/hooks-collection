@@ -16,6 +16,7 @@ namespace Widoz\EventListenersCollection\Listener;
 /**
  * Class SingleListener
  *
+ * @package Widoz\EventListenersCollection\Listener
  * @author Guido Scialfa <dev@guidoscialfa.com>
  */
 class SingleListener
