@@ -7,7 +7,6 @@
 
     <file>./src</file>
     <file>./inc</file>
-    <exclude-pattern>tests/*</exclude-pattern>
 
     <rule ref="Inpsyde">
         <exclude name="PHPCompatibility.FunctionDeclarations.NewReturnTypeDeclarations.voidFound"/>
