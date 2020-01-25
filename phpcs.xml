@@ -6,8 +6,12 @@
     <config name="ignore_warnings_on_exit" value="1"/>
 
     <file>./src</file>
-    <file>./inc</file>
-    <exclude-pattern>tests/*</exclude-pattern>
+    <file>./tests</file>
+    <exclude-pattern>./tests/coverage</exclude-pattern>
+    <exclude-pattern>./tests/php/bootstrap.php</exclude-pattern>
 
-    <rule ref="Inpsyde"/>
+    <rule ref="Inpsyde">
+        <exclude name="PHPCompatibility.FunctionDeclarations.NewReturnTypeDeclarations.voidFound"/>
+        <exclude name="Inpsyde.CodeQuality.ReturnTypeDeclaration.IncorrectVoidReturnType" />
+    </rule>
 </ruleset>

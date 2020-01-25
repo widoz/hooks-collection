@@ -16,6 +16,7 @@ namespace Widoz\EventListenersCollection\Listener;
 /**
  * Class SingleListener
  *
+ * @package Widoz\EventListenersCollection\Listener
  * @author Guido Scialfa <dev@guidoscialfa.com>
  */
 class SingleListener
@@ -48,7 +49,11 @@ class SingleListener
     }
 
     /**
-     * @inheritDoc
+     * Single Listener Callback
+     *
+     * @param mixed $parameters A list of parameters passed by the dispatcher.
+     *
+     * @return mixed
      *
      * phpcs:disable Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
      * phpcs:disable Inpsyde.CodeQuality.ReturnTypeDeclaration.NoReturnType
