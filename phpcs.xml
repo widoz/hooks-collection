@@ -6,7 +6,8 @@
     <config name="ignore_warnings_on_exit" value="1"/>
 
     <file>./src</file>
-    <file>./inc</file>
+    <file>./tests</file>
+    <exclude-pattern>./tests/php/bootstrap.php</exclude-pattern>
 
     <rule ref="Inpsyde">
         <exclude name="PHPCompatibility.FunctionDeclarations.NewReturnTypeDeclarations.voidFound"/>

@@ -36,7 +36,6 @@ class TestCase extends PhpunitTestCase
 
     /**
      * @inheritDoc
-     * @throws InvalidArgumentException
      */
     protected function setUp()
     {
@@ -74,22 +73,26 @@ class TestCase extends PhpunitTestCase
      * @param int $numberOfTimesCallbackGetExecuted
      * @throws InvalidArgumentException
      * @return Closure
+     *
+     * @phpcs:disable Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
      */
     protected function initializeCallback(
         $expectedParameters,
         int &$numberOfTimesCallbackGetExecuted
-    ) {
+    ): callable {
+        // phpcs:enable
 
         Assert::same(
             0,
             $numberOfTimesCallbackGetExecuted,
-            '$numberOfTimeCallbackGetExecuted must be always 0. This value is for assert how many times the callback has been executed.'
+            "{$numberOfTimesCallbackGetExecuted} must be always 0."
         );
 
+        // @phpcs:ignore Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
         return function (...$parameters) use (
             $expectedParameters,
             &$numberOfTimesCallbackGetExecuted
-        ) {
+        ): void {
             self::assertEquals($parameters, $expectedParameters);
             ++$numberOfTimesCallbackGetExecuted;
         };
