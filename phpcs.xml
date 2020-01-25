@@ -11,5 +11,6 @@
 
     <rule ref="Inpsyde">
         <exclude name="PHPCompatibility.FunctionDeclarations.NewReturnTypeDeclarations.voidFound"/>
+        <exclude name="Inpsyde.CodeQuality.ReturnTypeDeclaration.IncorrectVoidReturnType" />
     </rule>
 </ruleset>

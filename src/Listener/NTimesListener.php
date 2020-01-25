@@ -57,7 +57,11 @@ class NTimesListener
     }
 
     /**
-     * @inheritDoc
+     * N Times Listener Callback
+     *
+     * @param mixed $parameters A list of parameters passed by the dispatcher.
+     *
+     * @return mixed
      *
      * phpcs:disable Inpsyde.CodeQuality.ArgumentTypeDeclaration.NoArgumentType
      * phpcs:disable Inpsyde.CodeQuality.ReturnTypeDeclaration.NoReturnType
