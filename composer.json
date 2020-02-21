@@ -39,7 +39,8 @@
   },
   "require": {
     "php": ">=7.1.33",
-    "webmozart/assert": "^1.6"
+    "webmozart/assert": "^1.6",
+    "phpro/grumphp": "^0.16.2"
   },
   "require-dev": {
     "widoz/project-tests-helper": "dev-phpunit-7",
