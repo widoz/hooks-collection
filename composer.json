@@ -39,8 +39,7 @@
   },
   "require": {
     "php": ">=7.1.33",
-    "webmozart/assert": "^1.6",
-    "phpro/grumphp": "^0.16.2"
+    "webmozart/assert": "^1.6"
   },
   "require-dev": {
     "widoz/project-tests-helper": "dev-phpunit-7",
@@ -48,7 +47,8 @@
     "phpunit/phpunit": "^7",
     "inpsyde/php-coding-standards": "^0.13.3",
     "vimeo/psalm": "^3.8",
-    "fzaninotto/faker": "^1.9"
+    "fzaninotto/faker": "^1.9",
+    "phpro/grumphp": "^0.16.2"
   },
   "config": {
     "platform": {
