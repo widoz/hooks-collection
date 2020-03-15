@@ -15,7 +15,7 @@ install:
 
 script:
     - ./vendor/bin/phpunit --testdox --coverage-clover=coverage/report/coverage.xml
-    - ./vendor/bin/phpcs
+    - ./vendor/bin/phpcs src/ tests/
     - ./vendor/bin/psalm
 
 after_success:
