@@ -1,9 +1,5 @@
 parameters:
   tasks:
-    phpcs:
-      whitelist_patterns:
-        - /src/
-        - /tests/
     git_commit_message:
       allow_empty_message: false
       enforce_capitalized_subject: true
